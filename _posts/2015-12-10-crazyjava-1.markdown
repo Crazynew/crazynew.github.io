@@ -1,0 +1,7 @@
+---
+layout: post
+category: "Java"
+title:  "疯狂java学习之1"
+tags: [疯狂java]
+---
+详见：<http://blog.chinaunix.net/uid-22985736-id-130069.html>
