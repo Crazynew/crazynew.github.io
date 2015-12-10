@@ -12,7 +12,7 @@ paginate_path: "page:num"
 # presonal config
 domain: crazynew.github.io
 title: Crazynew's Blog
-description:Java Web, Linux, Design Patterns,reading...
+description: Java Web, Linux, Design Patterns, reading...
 author: Victor Zhou
 email: huixingworld#163.com
 github: Crazynew
