@@ -10,7 +10,7 @@ paginate: 8
 paginate_path: "page:num"
 
 # presonal config
-domain: crazynew.github.com
+domain: crazynew.github.io
 title: Crazynew's Blog
 description:Java Web, Linux, Design Patterns,reading...
 author: Victor Zhou
