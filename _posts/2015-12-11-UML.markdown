@@ -9,7 +9,7 @@ tags: [UML]
 
 ## UML简介
 
-![图片1](https://github.com/Crazynew/crazynew.github.io/images/图片1.png)
+![图片1](https://github.com/Crazynew/crazynew.github.io/blob/master/images/%E5%9B%BE%E7%89%871.png)
 
 
 
