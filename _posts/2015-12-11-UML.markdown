@@ -1,0 +1,15 @@
+---
+
+layout: post
+category: "UML"
+title:  "UML简介"
+tags: [UML]
+
+---
+
+## UML简介
+
+![图片1](https://github.com/Crazynew/crazynew.github.io/images/图片1.png)
+
+
+
