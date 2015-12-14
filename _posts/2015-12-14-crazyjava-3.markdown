@@ -1,0 +1,281 @@
+---
+
+layout: post
+category: "Java"
+title:  "疯狂java讲义学习——数据类型与运算符"
+tags: [疯狂java]
+
+---
+
+## 注释 
+
+为何添加注释：
+
+* 永远不要过于相信自己的理解力
+* 可读性第一，效率第二
+* 代码即文档 
+
+注释类型：
+
+* 单行注释 //
+* 多行注释 /**/
+* 文档注释 /** */
+
+## API文档
+
+* 下载java相应的API文档，学会查阅相应的类及方法的功能用法等
+* javadoc工具如何生成系统的API文档（javadoc工具只处理文档源文件在类、接口、方法、成员变量、构造器和内部类之前的注释）
+
+## 标示符和关键字
+
+##### 分隔符
+
+* 分号；作为语句的分割（应避免在一行写多个语句）；
+* 花括号{}定义代码块；
+* 方括号[]主要用于访问数组元素；
+* 圆括号（）功能丰富：1. 调用方法时所需； 2. 将表达式某部分括成整体优先计算； 3. 作为强制类型转换的运算符；
+* 空格分割语句的不同部分；
+* 圆点.通常用作类/对象和它的成员（包括成员变量、方法和内部类）之间的分隔符，表明调用某个类或某个实例的指定成员。
+
+##### 标示符规则
+
+* 可以由字母、数字、下划线(_)和美元符（$）组成，其中数字不能打头；
+* 不能是java的关键字和保留字，但可以包含关键字和保留字；
+* 不能包含空格；
+* 只能包含美元符（$）,不能包含@、#等其他特殊字符；
+
+> Tips: java语言是区分大小写的
+
+##### 关键字 
+
+
+<table>
+    <tr>
+        <td>abstract</td>
+        <td>continue</td>
+        <td>for</td>
+        <td>new</td>
+        <td>switch</td>
+        <td>assert</td>
+        <td>default</td>
+        <td>if</td>
+        <td>package</td>
+        <td>synchronized</td>
+        
+    </tr>
+    <tr>
+        <td>boolean</td>
+        <td>do</td>
+        <td>goto</td>
+        <td>private</td>
+        <td>this</td>
+        <td>break</td>
+        <td>double</td>
+        <td>implements</td>
+        <td>protected</td>
+        <td>throw</td>
+       
+    </tr>
+    <tr>
+        <td>throws</td>
+        <td>case</td>
+        <td>enum</td>
+        <td>instanceof</td>
+        <td>return</td>
+        <td>transient</td>
+        <td>catch</td>
+        <td>extends</td>
+        <td>int</td>
+        <td>short</td>
+    </tr>
+    <tr>
+        <td>try</td>
+        <td>char</td>
+        <td>final</td>
+        <td>interface</td>
+        <td>static</td>
+        <td>void</td>
+        <td>class</td>
+        <td>finally</td>
+        <td>long</td>
+        <td>strictfp</td>
+    </tr>
+    <tr>
+        <td>volatile</td>
+        <td>const</td>
+        <td>float</td>
+        <td>native</td>
+        <td>super</td>
+        <td>while</td>
+        <td>byte</td>
+        <td>else</td>
+        <td>import</td>
+        <td>public</td>
+    </tr>
+</table>
+
+## 数据类型
+
+> 强/弱类型是指类型检查的严格程度的。语言有无类型，弱类型和强类型三种。无类型的不检查，甚至不区分指令和数据。弱类型的检查很弱，仅能严格的区分指令和数据。强类型的则严格的在编译期进行检查。 
+
+> 强类型包含两方面含义：1. 所有的变量必须先声明后使用；2. 指定类型的变量只能接受类型与之匹配的值
+
+> 编程的本质就是对内存中数据的访问和修改，变量相当于一个有名称的容器，该容器用于装各种不同类型的数据
+
+Java语言是强类型语言，定义变量至少需要制定变量类型和变量名两个部分；
+
+Java语言分为两类：基本类型和引用类型；
+
+_基本数据类型_
+
+<table>
+    <tr>
+     <th>分类</th>
+     <td colspan="4">整数类型</td>
+     <td>字符(整数)类型</td>
+     <td colspan="2">浮点类型</td>
+     <td>布尔类型</td>
+    </tr>
+    <tr>
+     <th>类型名称</th>
+     <td>byte</td>
+     <td>short</td>
+     <td>int</td>
+     <td>long</td>
+     <td>char</td>
+     <td>float</td>
+     <td>double</td>
+     <td>boolean</td>
+    </tr>
+    <tr>
+     <th>字节数</th>
+     <td>1</td>
+     <td>2</td>
+     <td>4</td>
+     <td>8</td>
+     <td>2</td>
+     <td>4</td>
+     <td>8</td>
+     <td>1 ???</td>
+    </tr>
+</table>
+
+### 整数类型
+
+> 1. int是最常用的整数类型，直接给出一个整数值默认就是int类型
+
+> 2. java不会把一个整数值当成long类型处理，需要在其后增加l或者L后缀;可将一个较小的整数值（int范围内）直接赋给一个long类型变量，原因是java依然把这个整数值当做int类型处理，知识因为int类型的值会自动类型转换为long类型
+
+> 3. java7新增了对二进制整数的支持，二进制的整数以0b或者0B开头
+
+> 4. 计算机以补码的形式保存所有整数
+
+### 字符类型
+
+> 1. [字符集(给所有字符的编号组成总和)](http://baike.baidu.com/link?url=7R8qzC6V48nsFS0OkUHAyTJppSkSLTFY5E-DdpWSKmZdsPinXd5Rs13voZnpSc4QTZcsBj5qt-X_hiIHFDuXj_)
+
+> 2. 字符型三种表示形式'A'、'\n'、'\uXXXX'
+
+### 浮点型
+
+> 1. float(1符号位 + 8指数位 + 23位数)；double(1符号位 + 11指数位 + 52位数)
+
+
+> 2. float个double均不能精确表示浮点数，而BigDecimal类可以精确保存
+
+> 3. 只有浮点类型的数值才可以使用科学计数法形式表示，java语言的浮点类型默认是double类型
+
+> 4. java提供三个特殊的浮点数值：正无穷大、负无穷大、非数，用于表示溢出和出错;_(只有浮点数除以0才可以得到正无穷大或负无穷大，如果一个整数值除以0，则会抛出异常；正无穷大通过Double或Float类的POSITIVE_INFINITY表示，负无穷大通过Double或Float类的NEGATIVE_INFINITY表示，非数通过Double或Float类的NaN表示)_
+
+> 5. java7引入了新功能：程序员可以再数值中使用下划线，不管是整型数值，还是浮点型数值，都可以自由使用下划线，可以更加直观分辨数值中包含多少位。
+<code>
+ <pre>
+   int binVal = 0B1000_0000_0000_0000_0000_0000_0000_0011;
+   double pi = 3.14_15_92_65_36;
+   double height = 8_8_4_8.23;
+ </pre>
+</code>
+
+### 布尔型
+
+* 在Java语言中，boolean类型数值只能是true或者false，不能用0或非0来代表。
+* java规范并没有强制指定boolean类型的变量所占用的内存空间。但是网上有如下说法：
+ > 1. boolean a=true;//这个a在JVM中占4个字节即：32位。
+
+ > 2. boolean[] b = new boolean[10];//数组时，每一个boolean在JVM中占一个字节。
+
+* boolean类型的值或变量主要用来做旗标进行流程控制
+
+## 基本类型的类型转换
+![自动类型转换图](http://i4.tietuku.com/44eb605427582408.png)
+
+* 自动类型转换：左——>右
+* 强制类型转换：右——>左
+> _Tips:_
+> 
+> 当把任何基本类型的值和字符串进行连接运算时，基本类型的值将自动类型转换为字符串类型
+
+### 强制类型转换(缩小转换)
+
+语法格式：(targetType)value,强制类型转换的运算符是圆括号().
+
+java八中基本类型包装类
+<table>
+   <tr>
+     <th>基本类型</th>
+     <td>byte</td>
+     <td>short</td>
+     <td>int</td>
+     <td>long</td>
+     <td>char</td>
+     <td>float</td>
+     <td>double</td>
+     <td>boolean</td>
+   </tr>
+   <tr>
+     <th>包装类</th>
+     <td>Byte</td>
+     <td>Short</td>
+     <td>Integer</td>
+     <td>Long</td>
+     <td>Character</td>
+     <td>Float</td>
+     <td>Double</td>
+     <td>Boolean</td>
+   </tr>
+</table>
+
+> 8个包装类都提供了一个parseXxx(String str)静态方法用于将字符串转换成基本类型
+
+### 自动提升规则
+
+* 所有的byte、short和char类型将被提升为int类型
+* 整个算术表达式的数据类型自动提升到与表达式中最高等级操作数同样的类型。
+
+## 直接量
+
+能指定直接量的通常只有三种类型：基本类型、字符串类型和null类型。
+
+* null类型的直接量可以直接赋给任何引用类型的变量
+* 当程序第一次使用某个字符串直接量时，Java会使用常量池来缓存该字符串直接量
+> 缓存池（constant pool）指的是编译期被确定，并被保存在已编译的.class文件中的一些数据。
+
+## 运算符
+
+1. 算术运算符： +、 -、 *、 /、 % 、++、 --
+
+2. 赋值运算符： =
+
+3. 位运算符： & 、|、 ~、 ^、 << 、>> 、>>> (注：进行移位运算不会改变操作数本身，只是得到了一个新的运算结果，而原来的操作数本身是不会改变的)
+
+4. 扩展后的赋值运算符： += 、 -=  、*=  、/= 、 %= 、 &= 、 |= 、 ^=、  <<= 、 >>=、  >>>= (不仅具有更好的性能，而且程序会更加健壮)
+
+5. 比较运算符： > 、 >=、 <、  <= 、 ==
+
+6. 逻辑运算符： &&、&（不短路与）、||、|（不短路或）、！、^
+
+7. 三目运算符 ？：_(expression)?if-true-statement:if-false-statement_
+
+8. 类型相关的运算符：instanceof和（type）,与类、继承有关
+
+
