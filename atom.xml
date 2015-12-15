@@ -20,7 +20,11 @@ title : Atom Feed
    <link href="http://{{ site.domain }}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{ site.production_url }}{{ post.id }}</id>
+<<<<<<< HEAD
    <content type="md">{{ post.content | xml_escape }}</content>
+=======
+   <content type="html">{{ post.content | xml_escape }}</content>
+>>>>>>> 2e570b5a334498c8a987d74834bc100481ceccdb
  </entry>
  {% endfor %}
  
