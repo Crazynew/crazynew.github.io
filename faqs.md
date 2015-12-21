@@ -12,6 +12,8 @@ title: "问答：Faqs"
 
 2,[史上最浅显易懂的git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 
+3.[专业图片外链网站](http://tietuku.com/)
+
 更多请看本文评论，欢迎来盖楼！
 
 <!-- Blog Comments -->
